@@ -3,6 +3,15 @@ server:
 spring:
   application:
     name: spring-cloud-config-server
-  profiles:
-    active:
-      - native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/leandrocgsi/erudio-config-server
+          search-paths: 'greeting-service*'
+#          username: username
+#          password: password
+#        default-label: main
+#  profiles:
+#    active:
+#      - native
