@@ -1,0 +1,17 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: exchange-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/exchange_service
+    username: root
+    password: admin123
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+    show-sql: false
+    open-in-view: false
