@@ -19,3 +19,10 @@ spring:
       hibernate:
     show-sql: false
     open-in-view: false
+
+springdoc:
+  api-docs:
+    path: /exchange-service/v3/api-docs
+  swagger-ui:
+    url: /exchange-service/v3/api-docs
+  override-server-url: true

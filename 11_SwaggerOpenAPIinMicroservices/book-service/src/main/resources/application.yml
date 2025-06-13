@@ -37,3 +37,9 @@ spring:
       hibernate:
     show-sql: false
     open-in-view: false
+springdoc:
+  api-docs:
+    path: /book-service/v3/api-docs
+  swagger-ui:
+    url: /book-service/v3/api-docs
+  override-server-url: true

@@ -16,3 +16,10 @@ spring:
               uri: lb://exchange-service
               predicates:
                 - Path=/exchange-service/**
+springdoc:
+  swagger-ui:
+    urls:
+      - name: book-service
+        url: /book-service/v3/api-docs
+      - name: exchange-service
+        url: /exchange-service/v3/api-docs
