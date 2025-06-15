@@ -1,0 +1,25 @@
+server:
+  port: 8765
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: book-service
+              uri: lb://book-service
+              predicates:
+                - Path=/book-service/**
+            - id: exchange-service
+              uri: lb://exchange-service
+              predicates:
+                - Path=/exchange-service/**
+springdoc:
+  swagger-ui:
+    urls:
+      - name: book-service
+        url: /book-service/v3/api-docs
+      - name: exchange-service
+        url: /exchange-service/v3/api-docs

@@ -1,0 +1,28 @@
+server:
+  port: 8000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: exchange-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/exchange_service
+    username: root
+    password: admin123
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+    show-sql: false
+    open-in-view: false
+
+springdoc:
+  api-docs:
+    path: /exchange-service/v3/api-docs
+  swagger-ui:
+    url: /exchange-service/v3/api-docs
+  override-server-url: true
