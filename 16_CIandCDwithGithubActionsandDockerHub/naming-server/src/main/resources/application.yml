@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: naming-server
+  management:
+    tracing:
+      sampling:
+        probability: 1.0
 eureka:
   client:
     register-with-eureka: false

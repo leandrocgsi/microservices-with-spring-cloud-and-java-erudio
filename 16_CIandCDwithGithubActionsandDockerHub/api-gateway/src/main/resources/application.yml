@@ -16,6 +16,10 @@ spring:
               uri: lb://exchange-service
               predicates:
                 - Path=/exchange-service/**
+  management:
+    tracing:
+      sampling:
+        probability: 1.0
 springdoc:
   swagger-ui:
     urls:
