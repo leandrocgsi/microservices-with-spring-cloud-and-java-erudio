@@ -25,4 +25,20 @@ jobs:
 
     - name: Build Eureka Naming Server Docker Image
       working-directory: ./16_CIandCDwithGithubActionsandDockerHub/naming-server
-      run: mvn spring-boot:build-image -DskipTests
+      run: mvn spring-boot:build-image
+
+    - name: Build API Gateway Docker Image
+      working-directory: ./16_CIandCDwithGithubActionsandDockerHub/api-gateway
+      run: mvn spring-boot:build-image
+
+    - name: Build Exchange Microservice Docker Image
+      working-directory: ./16_CIandCDwithGithubActionsandDockerHub/exchange-service
+      run: mvn clean package
+
+    - name: Build Book Microservice Docker Image
+      working-directory: ./16_CIandCDwithGithubActionsandDockerHub/book-service
+      run: mvn clean package
+
+    - name: Docker Compose Build
+      working-directory: ./16_CIandCDwithGithubActionsandDockerHub
+      run: docker compose build
