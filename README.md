@@ -1,12 +1,10 @@
-# Microsserviços 2025 with Spring Cloud, Spring Boot, Kubernetes and Docker
+# [Microsserviços 2025 com Spring Cloud, Spring Boot, Kubernetes e Docker](https://www.udemy.com/course/microservices-do-0-a-gcp-com-spring-boot-kubernetes-e-docker/?couponCode=GTHB_FLASH_SALE2021)
+### [Domine microsserviços com Spring Boot, Spring Cloud, Docker, Kubernetes e Google Cloud Platform](https://www.udemy.com/course/microservices-do-0-a-gcp-com-spring-boot-kubernetes-e-docker/?couponCode=GTHB_FLASH_SALE2021)
 
 ![Forks](https://img.shields.io/github/forks/leandrocgsi/microservices-with-spring-cloud-and-java-erudio)
 ![Stars](https://img.shields.io/github/stars/leandrocgsi/microservices-with-spring-cloud-and-java-erudio)
 ![Last Commit](https://img.shields.io/github/last-commit/leandrocgsi/microservices-with-spring-cloud-and-java-erudio)
 [![Microservices Continuous Deployment with Github Actions](https://github.com/leandrocgsi/microservices-with-spring-cloud-and-java-erudio/actions/workflows/continuous-deployment.yml/badge.svg)](https://github.com/leandrocgsi/microservices-with-spring-cloud-and-java-erudio/actions/workflows/continuous-deployment.yml)
-
-# [Microsserviços 2025 com Spring Cloud, Spring Boot, Kubernetes e Docker](https://www.udemy.com/course/microservices-do-0-a-gcp-com-spring-boot-kubernetes-e-docker/?couponCode=GTHB_FLASH_SALE2021)
-### [Domine microsserviços com Spring Boot, Spring Cloud, Docker, Kubernetes e Google Cloud Platform](https://www.udemy.com/course/microservices-do-0-a-gcp-com-spring-boot-kubernetes-e-docker/?couponCode=GTHB_FLASH_SALE2021)
 
 <br>
 
