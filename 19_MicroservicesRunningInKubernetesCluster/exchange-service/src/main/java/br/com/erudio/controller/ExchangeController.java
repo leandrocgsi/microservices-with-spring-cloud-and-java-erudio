@@ -43,10 +43,13 @@ public class ExchangeController {
 
         if (exchange == null) throw new RuntimeException("Currency Unsupported!");
 
+        String port = informationService.retrieveServerPort();
+        String host = informationService.retrieveInstanceInfo();
+
         BigDecimal conversionFactor = exchange.getConversionFactor();
         BigDecimal convertedValue = conversionFactor.multiply(amount);
         exchange.setConvertedValue(convertedValue);
-        exchange.setEnvironment("PORT " + informationService.retrieveServerPort());
+        exchange.setEnvironment(host + " VERSION: kube-v1 PORT " + port);
 
         return exchange;
     }

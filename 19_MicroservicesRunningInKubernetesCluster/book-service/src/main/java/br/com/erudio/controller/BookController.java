@@ -7,6 +7,8 @@ import br.com.erudio.proxy.ExchangeProxy;
 import br.com.erudio.repository.BookRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("book-service")
 public class BookController {
+
+    private Logger logger = LoggerFactory.getLogger(BookController.class);
 
     @Autowired
     private InstanceInformationService informationService;
@@ -37,15 +41,19 @@ public class BookController {
             @PathVariable("currency") String currency
     ){
         String port = informationService.retrieveServerPort();
+        String host = informationService.retrieveInstanceInfo();
 
         var book = repository.findById(id).orElseThrow();
+
+        logger.info("Calculating the converted price of the book from {} USD to {}.", book.getPrice(), currency);
 
         Exchange exchange = proxy.getExchange(book.getPrice(), "USD", currency);
 
         // book.setEnvironment(port + " FEIGN");
         book.setEnvironment(
-            "BOOK PORT: " + port +
-            " EXCHANGE PORT: " + exchange.getEnvironment());
+            "BOOK HOST: " + host + " PORT: " + port +
+            " VERSION: kube-v1" +
+            " EXCHANGE HOST: " + exchange.getEnvironment());
         book.setPrice(exchange.getConvertedValue());
         book.setCurrency(currency);
         return book;

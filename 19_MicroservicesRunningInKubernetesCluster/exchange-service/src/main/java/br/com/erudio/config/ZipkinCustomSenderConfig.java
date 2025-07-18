@@ -1,3 +1,4 @@
+/*
 package br.com.erudio.config;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -21,3 +22,4 @@ public class ZipkinCustomSenderConfig {
     }
 
 }
+*/

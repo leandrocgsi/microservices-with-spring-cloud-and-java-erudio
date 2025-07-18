@@ -1,9 +1,19 @@
 server:
   port: 8100
-eureka:
-  client:
-    service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka}
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka}
 resilience4j:
   ratelimiter:
     instances:
@@ -41,8 +51,8 @@ spring:
     tracing:
       sampling:
         probability: 1.0
-  zipkin:
-    base-url: ${SPRING_ZIPKIN_BASEURL:http://localhost:9411}
+#  zipkin:
+#    base-url: ${SPRING_ZIPKIN_BASEURL:http://localhost:9411}
 springdoc:
   api-docs:
     path: /book-service/v3/api-docs
