@@ -1,0 +1,35 @@
+server:
+  port: 8765
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka}
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: book-service
+              uri: lb://book-service
+              predicates:
+                - Path=/book-service/**
+            - id: exchange-service
+              uri: lb://exchange-service
+              predicates:
+                - Path=/exchange-service/**
+  management:
+    tracing:
+      sampling:
+        probability: 1.0
+  zipkin:
+    base-url: ${SPRING_ZIPKIN_BASEURL:http://localhost:9411}
+springdoc:
+  swagger-ui:
+    urls:
+      - name: book-service
+        url: /book-service/v3/api-docs
+      - name: exchange-service
+        url: /exchange-service/v3/api-docs
